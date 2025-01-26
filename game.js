@@ -70,7 +70,7 @@ function startOver(){
     gamePattern=[];
     toggle=false;
     setTimeout(function(){
-        $("h1").text("ress A Key to Start");
+        $("h1").text("Press A Key to Start");
     },1000);
     
 }
