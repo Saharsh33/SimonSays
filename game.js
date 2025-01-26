@@ -68,6 +68,7 @@ function checkAnswer(currentLevel) {
 function startOver(){
     level=0;//sets initial variable and arrays to default
     gamePattern=[];
+    userClickedPattern=[];
     toggle=false;
     setTimeout(function(){
         $("h1").text("Press A Key to Start");
