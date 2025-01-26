@@ -4,11 +4,12 @@ var buttonColors=["red","blue","green","yellow"];
 var toggle = false;
 level=0;//level counter
 
-$(document).keydown(function(){//chech for keypress
+$(".startButton").click(function(){//chech for keypress
     if (!toggle) {//checks if toggle is false
         $("h1").text("Level "+level);
         nextSequence();//starts game
         toggle=true;
+        $(".startButton").addClass("invisible");
     }
 });
 
@@ -54,7 +55,7 @@ function checkAnswer(currentLevel) {
             setTimeout(function(){nextSequence()},1000);//calls nextSequence again after 1000ms
         }
     } else {
-        $("h1").text("Game Over,press any key to restart");
+        $("h1").text("Game Over,press Begin to restart");
         $("body").addClass("game-over");
         setTimeout(function(){
             $("body").removeClass("game-over")
@@ -71,8 +72,9 @@ function startOver(){
     userClickedPattern=[];
     toggle=false;
     setTimeout(function(){
-        $("h1").text("Press A Key to Start");
+        $("h1").text("Press Begin  to Start");
     },1000);
+    $(".startButton").removeClass("invisible");
     
 }
 //code by Saharsh
