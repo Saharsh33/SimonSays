@@ -17,6 +17,8 @@ $(".startButton").click(function(){//chech for keypress
 $(".btn").click(function(){//looking for btn class elements that got clicked
     var userChosenColor = $(this).attr("id");//storing id of clicked element
     userClickedPattern.push(userChosenColor);//inserting id of clicked button into userClickedPattern array
+    console.log(gamePattern);
+    console.log(userClickedPattern);
     playSound(userChosenColor);
     animatePress(userChosenColor);
     checkAnswer(userClickedPattern.length-1);//send value of current entry index to checkAnswer function
@@ -49,12 +51,14 @@ function animatePress(currentColor){
 
 function checkAnswer(currentLevel) {
     if (userClickedPattern[currentLevel]===gamePattern[currentLevel]) {//take currentLevel as index and matches to both arrays game and input one
-        
+        console.log("Success");
         if (userClickedPattern.length===gamePattern.length) {//if both array lengths are equal which means level is completed
+            console.log("Level Completed");
             userClickedPattern=[];
             setTimeout(function(){nextSequence()},1000);//calls nextSequence again after 1000ms
         }
     } else {
+        console.log("Game is over!")
         $("h1").text("Game Over,press Begin to restart");
         $("body").addClass("game-over");
         setTimeout(function(){
