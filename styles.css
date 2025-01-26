@@ -59,6 +59,7 @@ button{
   background-color: green;
   color:white;
   border-radius: 25px;
+  font-size: 3rem;
 }
 .invisible{
   visibility: hidden;
